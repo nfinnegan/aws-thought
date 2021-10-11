@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 // Renders the list of thoughts
 const ThoughtList = ({ thoughts, title }) => {
+  console.log(title) 
   if (!thoughts.length) {
     return <h3>No Thoughts Yet</h3>;
   }
@@ -24,6 +25,7 @@ const ThoughtList = ({ thoughts, title }) => {
             {thought.thought &&
               <p className="px-2 mt-2">
                 {thought.thought}
+                {thought.username} does this work 
               </p>
             }
             
