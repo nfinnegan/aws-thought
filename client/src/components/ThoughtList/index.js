@@ -24,8 +24,7 @@ const ThoughtList = ({ thoughts, title }) => {
             </p>
             {thought.thought &&
               <p className="px-2 mt-2">
-                {thought.thought}
-                {thought.username} does this work 
+                {thought.thought} 
               </p>
             }
             
