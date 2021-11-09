@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React from "react";
+import { Link, useParams } from "react-router-dom";
 
 // Renders the list of thoughts
 const ThoughtList = ({ thoughts, title }) => {
-  console.log(title) 
+  console.log(title);
   if (!thoughts.length) {
     return <h3>No Thoughts Yet</h3>;
   }
@@ -19,15 +19,21 @@ const ThoughtList = ({ thoughts, title }) => {
                 style={{ fontWeight: 700 }}
                 className="text-light"
               >
-                {thought.username}'s thought on {new Date(parseInt(thought.createdAt)).toString()}
-              </Link>{' '}
+                {thought.username}'s thought on{" "}
+                {new Date(parseInt(thought.createdAt)).toString()}
+              </Link>{" "}
             </p>
-            {thought.thought &&
-              <p className="px-2 mt-2">
-                {thought.thought} 
+            {thought.thought && <p className="px-2 mt-2">{thought.thought}</p>}
+            {/* add the thought image */}
+            {thought.image && (
+              <p className="px-2">
+                <img
+                  className="mt-3 ml-4 thought-image"
+                  src={thought.image}
+                  alt="S3 bucket response"
+                />
               </p>
-            }
-            
+            )}
           </div>
         ))}
     </div>
